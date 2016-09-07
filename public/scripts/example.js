@@ -13,7 +13,8 @@ var CommentList = React.createClass({
   render: function() {
     return (
       <div className="commentList">
-        Hello, world I am a comment list.
+        <Comment author="Pete Hunt">This is a comment</Comment>
+        <Comment author="Jordan Walke">This is a *another* comment</Comment>
       </div>
     );
   }
@@ -27,6 +28,19 @@ var CommentForm = React.createClass({
     );
   }
 });
+var Comment = React.createClass({
+  render: function() {
+    return (
+      <div className="comment">
+        <h2 className="commentAuthor">
+          {this.props.author}
+        </h2>
+        {this.props.childern}
+      </div>
+    );
+  }
+});
+
 ReactDOM.render(
   <CommentBox />,
   document.getElementById('content')
